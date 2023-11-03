@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-from add_0 import add
+if __name__ == '__main__':
+    import sys
 
-a = 1
-b = 2
-
-print("{0} + {1} = {2}".format(a, b, add(a, b)))
+    count = len(sys.argv) -1
+    if count == 0:
+        print('0 argument.')
+    elif count == 1:
+        print('1 argument:')
+    else:
+        print('() argument:'.format(count))
+    for i in range(count):
+        print("{}:  {} ".format(i + 1, sys.argv[i + 1]))
